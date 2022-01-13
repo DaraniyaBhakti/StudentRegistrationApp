@@ -72,7 +72,8 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    style="@style/cardLinearLayout">
+                    style="@style/cardLinearLayout"
+                    android:paddingStart="@dimen/margin_10dp">
 
                     <ImageView
                         style="@style/cardImageView"
@@ -396,7 +397,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/save"
                 android:paddingTop="@dimen/padding_15dp"
-                android:paddingBottom="@dimen/margin_10dp"
+                android:paddingBottom="@dimen/padding_15dp"
                android:layout_margin="@dimen/margin_10dp"
                 android:layout_alignParentEnd="true"
                 style="@style/Widget.MaterialComponents.Button.Icon"

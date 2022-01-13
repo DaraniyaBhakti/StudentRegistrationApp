@@ -58,7 +58,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextBirthDate"
-                android:inputType="date"
+                android:inputType="none"
                 style="@style/editText"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,7 +70,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <LinearLayout style="@style/cardLinearLayout">
+                <LinearLayout style="@style/cardLinearLayout"
+                    android:paddingStart="@dimen/margin_10dp">
 
                     <ImageView
                         android:src="@drawable/ic_baseline_female_24"

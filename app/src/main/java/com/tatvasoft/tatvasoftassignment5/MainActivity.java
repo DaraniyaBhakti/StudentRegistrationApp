@@ -10,6 +10,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -22,6 +23,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.slider.Slider;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     LinearLayout linearLayoutPersonal,linearLayoutEducation;
     TextInputLayout birthDate,textName,textContact,textEmail,textAddress;
     private static Resources resources;
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,15 +54,16 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         setEducationDropDown();
         setSliders();
 
+        editTextBirthDate.setKeyListener(null);
 
-        editTextBirthDate.setOnClickListener(view -> {
-            DialogFragment datePicker = new com.tatvasoft.tatvasoftassignment5.DatePicker();
-            datePicker.show(getSupportFragmentManager(),"date picker");
-
+        editTextBirthDate.setOnTouchListener((view, motionEvent) -> {
+            if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                DialogFragment datePicker = new com.tatvasoft.tatvasoftassignment5.DatePicker();
+             datePicker.show(getSupportFragmentManager(),"date picker");
+             editTextBirthDate.setError(null);
+            }
+            return false;
         });
-
-
-
 
     }
 
