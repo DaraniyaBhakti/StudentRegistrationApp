@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TatvasoftAssignment5</string>
+    <string name="personal_details">व्यक्तिगत विवरण</string>
+    <string name="name">नाम</string>
+    <string name="date_of_birth">जन्म तिथि</string>
+    <string name="male">नर</string>
+    <string name="female">मादा</string>
+    <string name="contact_number">संपर्क नंबर</string>
+    <string name="email">ईमेल</string>
+    <string name="country">देश</string>
+    <string name="address">पता</string>
+    <string name="hobbies">शौक</string>
+    <string name="reading">पढ़ना</string>
+    <string name="travelling">सफ़र</string>
+    <string name="cooking">खाना पकाना</string>
+    <string name="blogging">ब्लॉगिंग</string>
+    <string name="hiking">लंबी पैदल यात्रा</string>
+    <string name="gardening">बागबानी</string>
+    <string name="next">अगला</string>
+    <string name="schooling">पढ़ाई-लिखाई</string>
+    <string name="percentage">प्रतिशतता</string>
+    <string name="graduation">क्रमश:वृद्धि</string>
+    <string name="cgpa">सीजीपीए</string>
+    <string name="back">पीछे</string>
+    <string name="save">साइन इन करें</string>
+    <string name="percentage_colon">प्रतिशतता :</string>
+    <string name="cgpa_colon">सीजीपीए :</string>
+    <string name="educational_details">शैक्षिक विवरण</string>
+    <string name="valid_data">मान्य डेटा</string>
+    <string name="err_name">नाम दर्ज करें</string>
+    <string name="err_address">पता दर्ज करें</string>
+    <string name="err_dob">जन्म तिथि का चयन करें</string>
+    <string name="err1_email">ईमेल दर्ज करें</string>
+    <string name="err2_email">वैध ईमेल दर्ज करें</string>
+    <string name="err2_contact">वैध संपर्क संख्या दर्ज करें।</string>
+    <string name="err1_contact">संपर्क दर्ज करें</string>
+    <string name="err_gender">लिंग का चयन करें</string>
+    <string name="err_country">देश का चयन करें</string>
+    <string name="err_hobby">कम से कम 1 शौक का चयन करें</string>
+    <string name="err_school">स्कूल का चयन करें</string>
+    <string name="err_graduation">स्नातक स्तर की पढ़ाई का चयन करें</string>
+    <string name="err_percent">प्रतिशत का चयन करें</string>
+    <string name="err_cgpa">सीजीपीए का चयन करें</string>
+    <string name="gender">लिंग</string>
+    <string name="user_profile">यूजर प्रोफाइल</string>
+    <string name="english">English</string>
+    <string name="hindi">Hindi</string>
+    
+    <string-array name="schoolArray">
+        <item >एसएससी</item>
+        <item>एचएससी</item>
+    </string-array>
+
+    <string-array name="graduationArray">
+        <item >बीकॉम</item>
+        <item>बीबीए</item>
+        <item>बीई</item>
+        <item>बीटेक</item>
+        <item >बीएससी</item>
+        <item>बीबीए</item>
+        <item>बीसीए</item>
+    </string-array>
+
+    <string-array name="countryArray">
+        <item >भारत</item>
+        <item>ऑस्ट्रेलिया</item>
+        <item>अमरीका</item>
+        <item>ब्राज़ील</item>
+        <item >चीन</item>
+        <item>कोलंबिया</item>
+    </string-array>
+</resources>

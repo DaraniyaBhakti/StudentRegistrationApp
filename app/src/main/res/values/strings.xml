@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">TatvasoftAssignment5</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="name">Name</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="email">Email</string>
+    <string name="country">Country</string>
+    <string name="address">Address</string>
+    <string name="hobbies">Hobbies</string>
+    <string name="reading">Reading</string>
+    <string name="travelling">Travelling</string>
+    <string name="cooking">Cooking</string>
+    <string name="blogging">Blogging</string>
+    <string name="hiking">Hiking</string>
+    <string name="gardening">Gardening</string>
+    <string name="next">Next</string>
+    <string name="schooling">Schooling</string>
+    <string name="percentage">percentage</string>
+    <string name="graduation">Graduation</string>
+    <string name="cgpa">cgpa</string>
+    <string name="back">Back</string>
+    <string name="save">Sign In</string>
+    <string name="percentage_colon">Percentage :</string>
+    <string name="cgpa_colon">CGPA :</string>
+    <string name="educational_details">Educational Details</string>
+    <string name="valid_data">Valid Data</string>
+    <string name="err_name">Enter name</string>
+    <string name="err_address">Enter address</string>
+    <string name="err_dob">Select date of birth</string>
+    <string name="err1_email">Enter email</string>
+    <string name="err2_email">Enter valid email</string>
+    <string name="err2_contact">Enter valid contact no.</string>
+    <string name="err1_contact">Enter contact no.</string>
+    <string name="err_gender">Select gender</string>
+    <string name="err_country">Select country</string>
+    <string name="err_hobby">Select atleast 1 hobby</string>
+    <string name="err_school">Select school</string>
+    <string name="err_graduation">Select graduation</string>
+    <string name="err_percent">Select percentage</string>
+    <string name="err_cgpa">Select CGPA</string>
+    <string name="gender">Gender</string>
+    <string name="user_profile">User Profile</string>
+    <string name="english">English</string>
+    <string name="hindi">Hindi</string>
+
+
+    <string-array name="schoolArray">
+        <item >SSC</item>
+        <item>HSC</item>
+    </string-array>
+
+    <string-array name="graduationArray">
+        <item >BCom</item>
+        <item>BBA</item>
+        <item>BE</item>
+        <item>BTech</item>
+        <item >BSc</item>
+        <item>BBA</item>
+        <item>BCA</item>
+    </string-array>
+
+    <string-array name="countryArray">
+        <item >India</item>
+        <item>Australia</item>
+        <item>America</item>
+        <item>Brazil</item>
+        <item >China</item>
+        <item>Columbia</item>
+    </string-array>
+</resources>

@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/textViewSectionHeading"
+        style="@style/textSectionHeading"
+        android:text="@string/personal_details"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height"
+        android:background="@color/color_primary_dark"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginEnd="@dimen/margin_20dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutPersonal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textName"
+            style="@style/textInputLayout"
+            android:hint="@string/name"
+            app:boxStrokeWidthFocused="@dimen/stroke"
+            app:hintAnimationEnabled="true"
+            app:hintTextAppearance="?attr/textAppearanceCaption"
+            app:startIconDrawable="@drawable/ic_baseline_person_outline_24"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextName"
+                style="@style/editText"
+                android:inputType="textCapSentences"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textBirthDate"
+            style="@style/textInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/date_of_birth"
+            app:boxStrokeWidthFocused="@dimen/stroke"
+            app:hintAnimationEnabled="true"
+            app:hintTextAppearance="?attr/textAppearanceCaption"
+            app:startIconDrawable="@drawable/ic_baseline_date_range_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextBirthDate"
+                android:inputType="date"
+                style="@style/editText"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.cardview.widget.CardView
+            style="@style/cardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/cardLinearLayout">
+
+                    <ImageView
+                        android:src="@drawable/ic_baseline_female_24"
+                        style="@style/cardImageView"
+                        android:foregroundGravity="left"/>
+
+                    <TextView
+                        android:text="@string/gender"
+                        style="@style/cardTextView" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/dividerLayout" />
+
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin_10dp">
+
+                        <RadioButton
+                            android:id="@+id/radioButtonMale"
+                            android:text="@string/male"
+                            style="@style/radioButton" />
+
+                        <RadioButton
+                            android:id="@+id/radioButtonFemale"
+                            style="@style/radioButton"
+                            android:text="@string/female" />
+                    </RadioGroup>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textContact"
+            style="@style/textInputLayout"
+            android:hint="@string/contact_number"
+            app:boxStrokeWidthFocused="@dimen/stroke"
+            app:hintAnimationEnabled="true"
+            app:hintTextAppearance="?attr/textAppearanceCaption"
+            app:startIconDrawable="@drawable/ic_baseline_phone_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextContactNo"
+                android:inputType="phone"
+                style="@style/editText"
+                android:maxLength="10"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textEmail"
+            style="@style/textInputLayout"
+            android:hint="@string/email"
+            app:boxStrokeWidthFocused="@dimen/stroke"
+            app:hintAnimationEnabled="true"
+            app:hintTextAppearance="?attr/textAppearanceCaption"
+            app:startIconDrawable="@drawable/ic_outline_email_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEmail"
+                style="@style/editText"
+                android:inputType="textEmailAddress"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/textInputLayoutDropDown"
+            android:hint="@string/country"
+            app:boxStrokeWidthFocused="@dimen/stroke"
+            app:hintAnimationEnabled="true"
+            app:hintTextAppearance="?attr/textAppearanceCaption"
+            app:startIconDrawable="@drawable/ic_baseline_emoji_flags_24">
+
+            <AutoCompleteTextView
+                android:id="@+id/countryDropDown"
+                style="@style/editText"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textAddress"
+            style="@style/textInputLayout"
+            android:hint="@string/address"
+            app:boxStrokeWidthFocused="@dimen/stroke"
+            app:hintAnimationEnabled="true"
+            app:hintTextAppearance="?attr/textAppearanceCaption"
+            app:startIconDrawable="@drawable/ic_outline_home_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextAddress"
+                android:inputType="textPostalAddress"
+                style="@style/editText"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.cardview.widget.CardView
+            style="@style/cardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    style="@style/cardLinearLayout">
+
+                    <ImageView
+                        android:id="@+id/imgHobby"
+                        style="@style/cardImageView"
+                        android:src="@drawable/ic_baseline_draw_24" />
+
+                    <TextView
+                       style="@style/cardTextView"
+                        android:paddingStart="@dimen/padding_17dp"
+                        android:text="@string/hobbies"
+                         />
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/dividerLayout"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxReading"
+                        android:text="@string/reading"
+                        style="@style/checkBox" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxTravelling"
+                        style="@style/checkBox"
+                        android:text="@string/travelling" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxCooking"
+                        style="@style/checkBox"
+                        android:text="@string/cooking" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxBlogging"
+                        style="@style/checkBox"
+                        android:text="@string/blogging" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxHiking"
+                        style="@style/checkBox"
+                        android:text="@string/hiking" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxGardening"
+                        style="@style/checkBox"
+                        android:text="@string/gardening" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/nextButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/margin_20dp"
+            android:onClick="nextBtnCLick"
+            android:padding="@dimen/padding_15dp"
+            android:text="@string/next" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutEducation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+       android:visibility="gone" >
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:boxStrokeWidthFocused="@dimen/stroke"
+            app:hintAnimationEnabled="true"
+            app:hintTextAppearance="?attr/textAppearanceCaption"
+            style="@style/textInputLayoutDropDown"
+            android:hint="@string/schooling"
+            app:startIconDrawable="@drawable/ic_outline_menu_book_24">
+
+            <AutoCompleteTextView
+                android:id="@+id/schoolDropDown"
+                style="@style/editText"
+                android:inputType="none"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.cardview.widget.CardView
+           style="@style/cardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    style="@style/cardLinearLayout">
+                    <TextView
+                        android:text="@string/percentage_colon"
+                        style="@style/markTextView" />
+                    <TextView
+                        android:id="@+id/percentageTextView"
+                        style="@style/markTextView"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/dividerLayout" />
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/percentageSlider"
+                    style="@style/slider"
+                    android:valueFrom="0"
+                    android:valueTo="100"
+                    android:stepSize="0.5"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/textInputLayoutDropDown"
+            android:hint="@string/graduation"
+            app:startIconDrawable="@drawable/ic_baseline_school_24"
+            app:boxStrokeWidthFocused="@dimen/stroke"
+            app:hintAnimationEnabled="true"
+            app:hintTextAppearance="?attr/textAppearanceCaption">
+
+            <AutoCompleteTextView
+                android:id="@+id/graduationDropDown"
+                style="@style/editText"
+                android:inputType="none"
+                android:labelFor="@id/graduationDropDown"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.cardview.widget.CardView
+            style="@style/cardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    style="@style/cardLinearLayout">
+                    <TextView
+                        style="@style/markTextView"
+                        android:text="@string/cgpa_colon"
+                        />
+                    <TextView
+                       android:id="@+id/cgpaTextView"
+                        style="@style/markTextView"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/dividerLayout" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/cgpaSlider"
+                    style="@style/slider"
+                    android:valueFrom="0"
+                    android:valueTo="10"
+                    android:stepSize="0.1"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/margin_10dp"
+            android:padding="@dimen/margin_10dp">
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/back"
+                android:layout_gravity="start"
+                android:paddingTop="@dimen/padding_15dp"
+                android:paddingBottom="@dimen/padding_15dp"
+                android:layout_margin="@dimen/margin_10dp"
+                style="?attr/materialButtonOutlinedStyle"
+                android:onClick="backButtonClick"
+                />
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="end"
+                android:text="@string/save"
+                android:paddingTop="@dimen/padding_15dp"
+                android:paddingBottom="@dimen/padding_15dp"
+               android:layout_margin="@dimen/margin_10dp"
+                style="@style/Widget.MaterialComponents.Button.Icon"
+                android:onClick="saveButtonClick"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>
