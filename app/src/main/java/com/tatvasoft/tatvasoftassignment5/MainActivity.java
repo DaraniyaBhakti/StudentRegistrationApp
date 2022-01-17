@@ -33,15 +33,15 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
-    EditText editTextName,editTextBirthDate,editTextContactNo,editTextAddress,editTextEmail;
-    RadioButton radioButtonMale,radioButtonFemale;
-    CheckBox checkBoxReading,checkBoxTravelling,checkBoxCooking,checkBoxBlogging,checkBoxHiking,checkBoxGardening;
-    Button nextButton,backButton,saveButton;
-    TextView textViewSectionHeading,percentageTextView,cgpaTextView;
-    AutoCompleteTextView schoolDropDown,graduationDropDown,countryDropDown;
-    Slider percentageSlider,cgpaSlider;
-    LinearLayout linearLayoutPersonal,linearLayoutEducation;
-    TextInputLayout birthDate,textName,textContact,textEmail,textAddress;
+    private EditText editTextName,editTextBirthDate,editTextContactNo,editTextAddress,editTextEmail;
+    private RadioButton radioButtonMale,radioButtonFemale;
+    private CheckBox checkBoxReading,checkBoxTravelling,checkBoxCooking,checkBoxBlogging,checkBoxHiking,checkBoxGardening;
+    private Button nextButton,backButton,saveButton;
+    private TextView textViewSectionHeading,percentageTextView,cgpaTextView;
+    private AutoCompleteTextView schoolDropDown,graduationDropDown,countryDropDown;
+    private Slider percentageSlider,cgpaSlider;
+    private LinearLayout linearLayoutPersonal,linearLayoutEducation;
+    private TextInputLayout birthDate,textName,textContact,textEmail,textAddress;
     private static Resources resources;
     @SuppressLint("ClickableViewAccessibility")
     @Override
