@@ -9,9 +9,11 @@
     <dimen name="padding_5dp">5dp</dimen>
     <dimen name="corner_radius">1dp</dimen>
     <dimen name="stroke">2dp</dimen>
+    <dimen name="dimen_img">150dp</dimen>
 
     <dimen name="textSize">16sp</dimen>
     <dimen name="textSize_heading">20sp</dimen>
+
 
 
 </resources>
