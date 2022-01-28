@@ -73,11 +73,13 @@
 
                 <LinearLayout
                     style="@style/cardLinearLayout"
-                    android:paddingStart="@dimen/margin_10dp">
+                    android:paddingStart="@dimen/margin_10dp"
+                    android:paddingEnd="@dimen/dimen_0dp">
 
                     <ImageView
                         style="@style/cardImageView"
-                        android:src="@drawable/ic_baseline_female_24" />
+                        android:src="@drawable/ic_baseline_female_24"
+                        android:contentDescription="@string/descreption_genderIcon" />
 
                     <TextView
                         style="@style/cardTextView"
@@ -87,11 +89,6 @@
 
                 <LinearLayout
                     style="@style/dividerLayout"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
                     <RadioGroup
                         android:layout_width="match_parent"
@@ -109,7 +106,6 @@
                             style="@style/radioButton"
                             android:text="@string/female" />
                     </RadioGroup>
-                </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -197,11 +193,13 @@
                     <ImageView
                         android:id="@+id/imgHobby"
                         style="@style/cardImageView"
-                        android:src="@drawable/ic_baseline_draw_24" />
+                        android:src="@drawable/ic_baseline_draw_24"
+                        android:contentDescription="@string/descreption_hobbyIcon" />
 
                     <TextView
                         style="@style/cardTextView"
                         android:paddingStart="@dimen/padding_17dp"
+                        android:paddingEnd="@dimen/dimen_0dp"
                         android:text="@string/hobbies"
                          />
 

@@ -1,9 +1,5 @@
 package com.tatvasoft.tatvasoftassignment5;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
-
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.res.Resources;
@@ -14,7 +10,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -23,9 +18,11 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.datepicker.MaterialDatePicker;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+
 import com.google.android.material.slider.Slider;
-import com.google.android.material.textfield.TextInputLayout;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -36,12 +33,10 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     private EditText editTextName,editTextBirthDate,editTextContactNo,editTextAddress,editTextEmail;
     private RadioButton radioButtonMale,radioButtonFemale;
     private CheckBox checkBoxReading,checkBoxTravelling,checkBoxCooking,checkBoxBlogging,checkBoxHiking,checkBoxGardening;
-    private Button nextButton,backButton,saveButton;
     private TextView textViewSectionHeading,percentageTextView,cgpaTextView;
     private AutoCompleteTextView schoolDropDown,graduationDropDown,countryDropDown;
     private Slider percentageSlider,cgpaSlider;
     private LinearLayout linearLayoutPersonal,linearLayoutEducation;
-    private TextInputLayout birthDate,textName,textContact,textEmail,textAddress;
     private static Resources resources;
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -59,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         editTextBirthDate.setOnTouchListener((view, motionEvent) -> {
             if(motionEvent.getAction() == MotionEvent.ACTION_UP){
                 DialogFragment datePicker = new com.tatvasoft.tatvasoftassignment5.DatePicker();
-             datePicker.show(getSupportFragmentManager(),"date picker");
+             datePicker.show(getSupportFragmentManager(),getString(R.string.tag_datePicker));
              editTextBirthDate.setError(null);
             }
             return false;
@@ -98,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
             public void onStopTrackingTouch(@NonNull Slider slider) {
 
 
-                percentageTextView.setText(" "+slider.getValue() +"%");
+                percentageTextView.setText(String.format(" %s%%", slider.getValue()));
 
             }
         });
@@ -112,44 +107,36 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
             @SuppressLint("SetTextI18n")
             @Override
             public void onStopTrackingTouch(@NonNull Slider slider) {
-                cgpaTextView.setText(" "+slider.getValue());
+                cgpaTextView.setText(String.format(" %s", slider.getValue()));
             }
         });
 
     }
     public void bindId()
     {
-        editTextName = (EditText)findViewById(R.id.editTextName);
-        editTextBirthDate = (EditText)findViewById(R.id.editTextBirthDate);
-        editTextContactNo = (EditText)findViewById(R.id.editTextContactNo);
-        editTextEmail = (EditText)findViewById(R.id.editTextEmail);
-        editTextAddress = (EditText)findViewById(R.id.editTextAddress);
-        radioButtonMale = (RadioButton)findViewById(R.id.radioButtonMale);
-        radioButtonFemale=(RadioButton)findViewById(R.id.radioButtonFemale);
-        checkBoxReading = (CheckBox)findViewById(R.id.checkBoxReading);
-        checkBoxTravelling = (CheckBox)findViewById(R.id.checkBoxTravelling);
-        checkBoxCooking = (CheckBox)findViewById(R.id.checkBoxCooking);
-        checkBoxBlogging = (CheckBox)findViewById(R.id.checkBoxBlogging);
-        checkBoxHiking = (CheckBox)findViewById(R.id.checkBoxHiking);
-        checkBoxGardening = (CheckBox)findViewById(R.id.checkBoxGardening);
-        nextButton = (Button)findViewById(R.id.nextButton);
-        backButton = (Button)findViewById(R.id.backButton);
-        saveButton = (Button)findViewById(R.id.saveButton);
-        linearLayoutPersonal =(LinearLayout)findViewById(R.id.linearLayoutPersonal);
-        linearLayoutEducation = (LinearLayout)findViewById(R.id.linearLayoutEducation);
-        textViewSectionHeading = (TextView)findViewById(R.id.textViewSectionHeading);
-        schoolDropDown=(AutoCompleteTextView) findViewById(R.id.schoolDropDown);
-        graduationDropDown = (AutoCompleteTextView) findViewById(R.id.graduationDropDown);
-        countryDropDown = (AutoCompleteTextView)findViewById(R.id.countryDropDown);
-        percentageSlider = (Slider)findViewById(R.id.percentageSlider);
-        cgpaSlider = (Slider)findViewById(R.id.cgpaSlider);
-        percentageTextView=(TextView)findViewById(R.id.percentageTextView);
-        cgpaTextView =(TextView)findViewById(R.id.cgpaTextView);
-        birthDate = (TextInputLayout)findViewById(R.id.textBirthDate);
-        textName= (TextInputLayout)findViewById(R.id.textName);
-        textContact= (TextInputLayout)findViewById(R.id.textContact);
-        textEmail= (TextInputLayout)findViewById(R.id.textEmail);
-        textAddress= (TextInputLayout)findViewById(R.id.textAddress);
+        editTextName = findViewById(R.id.editTextName);
+        editTextBirthDate = findViewById(R.id.editTextBirthDate);
+        editTextContactNo = findViewById(R.id.editTextContactNo);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextAddress = findViewById(R.id.editTextAddress);
+        radioButtonMale = findViewById(R.id.radioButtonMale);
+        radioButtonFemale= findViewById(R.id.radioButtonFemale);
+        checkBoxReading = findViewById(R.id.checkBoxReading);
+        checkBoxTravelling = findViewById(R.id.checkBoxTravelling);
+        checkBoxCooking = findViewById(R.id.checkBoxCooking);
+        checkBoxBlogging = findViewById(R.id.checkBoxBlogging);
+        checkBoxHiking = findViewById(R.id.checkBoxHiking);
+        checkBoxGardening = findViewById(R.id.checkBoxGardening);
+        linearLayoutPersonal = findViewById(R.id.linearLayoutPersonal);
+        linearLayoutEducation = findViewById(R.id.linearLayoutEducation);
+        textViewSectionHeading = findViewById(R.id.textViewSectionHeading);
+        schoolDropDown= findViewById(R.id.schoolDropDown);
+        graduationDropDown = findViewById(R.id.graduationDropDown);
+        countryDropDown = findViewById(R.id.countryDropDown);
+        percentageSlider = findViewById(R.id.percentageSlider);
+        cgpaSlider = findViewById(R.id.cgpaSlider);
+        percentageTextView= findViewById(R.id.percentageTextView);
+        cgpaTextView = findViewById(R.id.cgpaTextView);
 
     }
 
@@ -198,6 +185,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         if(TextUtils.isEmpty(editTextName.getText().toString())) {
             isValid = false;
             editTextName.setError(getString(R.string.err_name));
+            editTextName.requestFocus();
         }
 
 
@@ -205,43 +193,52 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         if(TextUtils.isEmpty(editTextAddress.getText().toString())){
             isValid=false;
             editTextAddress.setError(getString(R.string.err_address));
+            editTextAddress.requestFocus();
         }
 
         if(TextUtils.isEmpty(editTextBirthDate.getText().toString())){
             isValid=false;
             editTextBirthDate.setError(getString(R.string.err_dob));
+            editTextBirthDate.requestFocus();
         }
 
 
         if(TextUtils.isEmpty(editTextEmail.getText().toString())){
             isValid=false;
             editTextEmail.setError(getString(R.string.err1_email));
+            editTextEmail.requestFocus();
+
         }
         else if(!Patterns.EMAIL_ADDRESS.matcher(editTextEmail.getText().toString()).matches())
         {
             isValid=false;
             editTextEmail.setError(getString(R.string.err2_email));
+            editTextEmail.requestFocus();
         }
 
         if(TextUtils.isEmpty(editTextContactNo.getText().toString())){
                 isValid=false;
                 editTextContactNo.setError(getString(R.string.err1_contact));
+            editTextContactNo.requestFocus();
         }
         else if(editTextContactNo.getText().toString().length()!=10){
                 isValid=false;
                 editTextContactNo.setError(getString(R.string.err2_contact));
+            editTextContactNo.requestFocus();
         }
 
         if((!radioButtonMale.isChecked()) && (!radioButtonFemale.isChecked()))
         {
             isValid=false;
             Toast.makeText(getApplicationContext(),getString( R.string.err_gender),Toast.LENGTH_SHORT).show();
+            radioButtonMale.requestFocus();
         }
 
         if(TextUtils.isEmpty(countryDropDown.getText().toString()))
         {
             Toast.makeText(getApplicationContext(),getString(R.string.err_country) ,Toast.LENGTH_SHORT).show();
             isValid = false;
+            countryDropDown.requestFocus();
         }
 
         if(!checkBoxReading.isChecked()){
@@ -252,6 +249,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                             if(!checkBoxGardening.isChecked()){
                                 Toast.makeText(getApplicationContext(), getString(R.string.err_hobby),Toast.LENGTH_SHORT).show();
                                 isValid = false;
+                                checkBoxReading.requestFocus();
                             }
                         }
                     }
@@ -270,21 +268,25 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         {
             Toast.makeText(getApplicationContext(), getString(R.string.err_school),Toast.LENGTH_SHORT).show();
             isValid = false;
+            schoolDropDown.requestFocus();
         }
 
         if(TextUtils.isEmpty(graduationDropDown.getText().toString()))
         {
             Toast.makeText(getApplicationContext(), getString(R.string.err_graduation),Toast.LENGTH_SHORT).show();
             isValid = false;
+            graduationDropDown.requestFocus();
         }
         if(TextUtils.isEmpty(percentageTextView.getText().toString())){
             Toast.makeText(getApplicationContext(),getString(R.string.err_percent) ,Toast.LENGTH_SHORT).show();
             isValid = false;
+            percentageSlider.requestFocus();
         }
 
         if(TextUtils.isEmpty(cgpaTextView.getText().toString())){
             Toast.makeText(getApplicationContext(), getString(R.string.err_percent),Toast.LENGTH_SHORT).show();
             isValid = false;
+            cgpaSlider.requestFocus();
         }
 
         return isValid;

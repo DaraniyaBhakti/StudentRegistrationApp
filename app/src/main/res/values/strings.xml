@@ -45,6 +45,9 @@
     <string name="user_profile">User Profile</string>
     <string name="english">English</string>
     <string name="hindi">Hindi</string>
+    <string name="tag_datePicker">date picker</string>
+    <string name="descreption_genderIcon">Gender Icon</string>
+    <string name="descreption_hobbyIcon">Hobby Icon</string>
 
 
     <string-array name="schoolArray">
