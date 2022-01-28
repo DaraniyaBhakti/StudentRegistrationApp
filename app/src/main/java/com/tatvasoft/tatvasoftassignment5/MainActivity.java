@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -20,7 +19,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 
 import com.google.android.material.slider.Slider;
 
@@ -28,7 +26,7 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class MainActivity extends AppCompatActivity {
 
     private EditText editTextName,editTextBirthDate,editTextContactNo,editTextAddress,editTextEmail;
     private RadioButton radioButtonMale,radioButtonFemale;
@@ -38,7 +36,8 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     private Slider percentageSlider,cgpaSlider;
     private LinearLayout linearLayoutPersonal,linearLayoutEducation;
     private static Resources resources;
-    @SuppressLint("ClickableViewAccessibility")
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,21 +45,42 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         setTitle(getString(R.string.user_profile));
         resources=getResources();
         bindId();
+        setLaunchDatePicker();
         setEducationDropDown();
         setSliders();
 
+
+
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    public void setLaunchDatePicker()
+    {
+        Calendar calendar = Calendar.getInstance();
+        DatePickerDialog.OnDateSetListener dateSetListener = (datePicker, year, month, day) -> {
+            calendar.set(Calendar.YEAR,year);
+            calendar.set(Calendar.MONTH,month);
+            calendar.set(Calendar.DAY_OF_MONTH,day);
+
+            String currentDateString = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.UK).format(calendar.getTime());
+            editTextBirthDate.setText(currentDateString);
+        };
         editTextBirthDate.setKeyListener(null);
 
         editTextBirthDate.setOnTouchListener((view, motionEvent) -> {
             if(motionEvent.getAction() == MotionEvent.ACTION_UP){
-                DialogFragment datePicker = new com.tatvasoft.tatvasoftassignment5.DatePicker();
-             datePicker.show(getSupportFragmentManager(),getString(R.string.tag_datePicker));
-             editTextBirthDate.setError(null);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this,
+                        dateSetListener,
+                        calendar.get(Calendar.YEAR),
+                        calendar.get(Calendar.MONTH),
+                        calendar.get(Calendar.DAY_OF_MONTH));
+                datePickerDialog.show();
+                editTextBirthDate.setError(null);
             }
             return false;
         });
-
     }
+
 
     public static Resources getRes()
     {
@@ -87,8 +107,6 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
             public void onStartTrackingTouch(@NonNull Slider slider) {
 
             }
-
-            @SuppressLint("SetTextI18n")
             @Override
             public void onStopTrackingTouch(@NonNull Slider slider) {
 
@@ -104,7 +122,6 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
             }
 
-            @SuppressLint("SetTextI18n")
             @Override
             public void onStopTrackingTouch(@NonNull Slider slider) {
                 cgpaTextView.setText(String.format(" %s", slider.getValue()));
@@ -161,21 +178,9 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
         if(isValidEducation())
         {
-            Toast.makeText(getApplicationContext(), getString(R.string.valid_data),Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.toast_signUp),Toast.LENGTH_SHORT).show();
         }
     }
-
-    @Override
-    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.YEAR,year);
-        calendar.set(Calendar.MONTH,month);
-        calendar.set(Calendar.DAY_OF_MONTH,day);
-
-        String currentDateString = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.UK).format(calendar.getTime());
-        editTextBirthDate.setText(currentDateString);
-    }
-
 
 
     private boolean isValidPersonal(){

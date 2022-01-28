@@ -44,25 +44,104 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextName"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@id/editTextContactNo"
                     android:inputType="textCapSentences"
                     style="@style/land_editText" />
             </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textContact"
+                style="@style/land_textInputLayout"
+                android:hint="@string/contact_number"
+                app:boxStrokeWidthFocused="@dimen/stroke"
+                app:hintAnimationEnabled="true"
+                app:hintTextAppearance="?attr/textAppearanceCaption"
+                app:startIconDrawable="@drawable/ic_baseline_phone_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextContactNo"
+                    style="@style/editText"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@id/editTextEmail"
+                    android:inputType="phone"
+                    android:maxLength="10"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
 
             <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textBirthDate"
-           style="@style/land_textInputLayout"
-            android:hint="@string/date_of_birth"
-            app:boxStrokeWidthFocused="2dp"
-            app:hintAnimationEnabled="true"
-            app:hintTextAppearance="?attr/textAppearanceCaption"
-            app:startIconDrawable="@drawable/ic_baseline_date_range_24">
+                android:id="@+id/textEmail"
+                style="@style/land_textInputLayout"
+                android:hint="@string/email"
+                app:boxStrokeWidthFocused="@dimen/stroke"
+                app:hintAnimationEnabled="true"
+                app:hintTextAppearance="?attr/textAppearanceCaption"
+                app:startIconDrawable="@drawable/ic_outline_email_24">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextBirthDate"
-                style="@style/land_editText"
-                android:inputType="none" />
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextEmail"
+                    style="@style/land_editText"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@id/editTextAddress"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textAddress"
+                style="@style/land_textInputLayout"
+                android:hint="@string/address"
+                app:boxStrokeWidthFocused="@dimen/stroke"
+                app:hintAnimationEnabled="true"
+                app:hintTextAppearance="?attr/textAppearanceCaption"
+                app:startIconDrawable="@drawable/ic_outline_home_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextAddress"
+                    android:imeOptions="actionDone"
+                    style="@style/land_editText"
+                    android:inputType="textPostalAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textBirthDate"
+                style="@style/land_textInputLayout"
+                android:hint="@string/date_of_birth"
+                app:boxStrokeWidthFocused="2dp"
+                app:hintAnimationEnabled="true"
+                app:hintTextAppearance="?attr/textAppearanceCaption"
+                app:startIconDrawable="@drawable/ic_baseline_date_range_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextBirthDate"
+                    style="@style/land_editText"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/land_textInputLayoutDropDown"
+                android:hint="@string/country"
+                app:boxStrokeWidthFocused="@dimen/stroke"
+                app:hintAnimationEnabled="true"
+                app:hintTextAppearance="?attr/textAppearanceCaption"
+                app:startIconDrawable="@drawable/ic_baseline_emoji_flags_24">
+
+                <AutoCompleteTextView
+                    android:id="@+id/countryDropDown"
+                    style="@style/land_editText"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
         <androidx.cardview.widget.CardView
             style="@style/cardView">
 
@@ -90,95 +169,25 @@
                 <LinearLayout
                     style="@style/dividerLayout"/>
 
-                    <RadioGroup
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="@dimen/margin_10dp">
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_10dp">
 
-                        <RadioButton
-                            android:id="@+id/radioButtonMale"
-                            style="@style/radioButton"
-                            android:text="@string/male" />
+                    <RadioButton
+                        android:id="@+id/radioButtonMale"
+                        style="@style/radioButton"
+                        android:text="@string/male" />
 
-                        <RadioButton
-                            android:id="@+id/radioButtonFemale"
-                            style="@style/radioButton"
-                            android:text="@string/female" />
-                    </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/radioButtonFemale"
+                        style="@style/radioButton"
+                        android:text="@string/female" />
+                </RadioGroup>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textContact"
-               style="@style/land_textInputLayout"
-                android:hint="@string/contact_number"
-                app:boxStrokeWidthFocused="@dimen/stroke"
-                app:hintAnimationEnabled="true"
-                app:hintTextAppearance="?attr/textAppearanceCaption"
-                app:startIconDrawable="@drawable/ic_baseline_phone_24">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextContactNo"
-                    style="@style/editText"
-                    android:inputType="phone"
-                    android:maxLength="10"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textEmail"
-                style="@style/land_textInputLayout"
-                android:hint="@string/email"
-                app:boxStrokeWidthFocused="@dimen/stroke"
-                app:hintAnimationEnabled="true"
-                app:hintTextAppearance="?attr/textAppearanceCaption"
-                app:startIconDrawable="@drawable/ic_outline_email_24">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextEmail"
-                    style="@style/land_editText"
-                    android:inputType="textEmailAddress" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/land_textInputLayoutDropDown"
-                android:hint="@string/country"
-                app:boxStrokeWidthFocused="@dimen/stroke"
-                app:hintAnimationEnabled="true"
-                app:hintTextAppearance="?attr/textAppearanceCaption"
-                app:startIconDrawable="@drawable/ic_baseline_emoji_flags_24">
-
-                <AutoCompleteTextView
-                    android:id="@+id/countryDropDown"
-                    style="@style/land_editText"
-                    android:inputType="none" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textAddress"
-               style="@style/land_textInputLayout"
-                android:hint="@string/address"
-                app:boxStrokeWidthFocused="@dimen/stroke"
-                app:hintAnimationEnabled="true"
-                app:hintTextAppearance="?attr/textAppearanceCaption"
-                app:startIconDrawable="@drawable/ic_outline_home_24">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextAddress"
-                    style="@style/land_editText"
-                    android:inputType="textPostalAddress" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
         <androidx.cardview.widget.CardView
             style="@style/cardView">
 

@@ -26,7 +26,7 @@
     <string name="percentage_colon">Percentage :</string>
     <string name="cgpa_colon">CGPA :</string>
     <string name="educational_details">Educational Details</string>
-    <string name="valid_data">Valid Data</string>
+    <string name="toast_signUp">Sign up successfully</string>
     <string name="err_name">Enter name</string>
     <string name="err_address">Enter address</string>
     <string name="err_dob">Select date of birth</string>

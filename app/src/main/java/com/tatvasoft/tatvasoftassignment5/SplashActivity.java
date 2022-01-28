@@ -17,20 +17,16 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.activity_splash);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         this.getWindow().setFlags(FLAG_FULLSCREEN, FLAG_FULLSCREEN);
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(1000);
-                    Intent in=new Intent(SplashActivity.this,MainActivity.class);
-                    startActivity(in);
-                    finish();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
+        new Thread(() -> {
+            try {
+                Thread.sleep(1000);
+                Intent in=new Intent(SplashActivity.this,MainActivity.class);
+                startActivity(in);
+                finish();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+
         }).start();
     }
 }

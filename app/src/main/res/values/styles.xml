@@ -12,7 +12,7 @@
     <style name="editText">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:imeOptions">actionDone</item>
+
     </style>
 
     <style name="cardView">
@@ -22,7 +22,6 @@
         <item name="android:layout_marginTop">@dimen/margin_20dp</item>
         <item name="android:layout_marginEnd">@dimen/margin_20dp</item>
         <item name="cardCornerRadius">@dimen/corner_radius</item>
-        <item name="cardBackgroundColor">@color/design_default_color_background</item>
     </style>
 
     <style name="radioButton">

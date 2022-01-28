@@ -28,7 +28,7 @@
     <string name="percentage_colon">प्रतिशतता :</string>
     <string name="cgpa_colon">सीजीपीए :</string>
     <string name="educational_details">शैक्षिक विवरण</string>
-    <string name="valid_data">मान्य डेटा</string>
+    <string name="toast_signUp">सफलतापूर्वक साइन अप करें</string>
     <string name="err_name">नाम दर्ज करें</string>
     <string name="err_address">पता दर्ज करें</string>
     <string name="err_dob">जन्म तिथि का चयन करें</string>
